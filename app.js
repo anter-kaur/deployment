@@ -17,6 +17,10 @@ app.use(cors({origin:'http://localhost:3001',credentials: true}))
 
 app.use(cookieParser()) 
 
+app.use('/',(req,res)=>{
+    res.status(200).json("server running")
+})
+
 app.use('/api/v1/user',userRouter)
 // app.use('/api/v1/dashboard',dashboardRouter)
 connection();
